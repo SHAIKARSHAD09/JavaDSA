@@ -3,7 +3,7 @@ package ArraysStrings;
 import java.util.*;
 /*for k = 2 input = 11(n)
 2(k)
-1 2 2 3  output = 7  k =distinct elements */ 
+1 2 2 3  output = 7  k =distinct elements */  
 public class p23 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
