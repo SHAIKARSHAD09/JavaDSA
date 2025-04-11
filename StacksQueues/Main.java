@@ -16,6 +16,10 @@ public class Main {
       l.printList();
       l.deleteAtSpecificPosition(2);
       l.printList();
+      l.Search(3);
+      l.reverse();
+      l.printList();
+      
   }
 }
 
@@ -120,6 +124,33 @@ class LL{
     curr.next = end.next;
   }
   
+  void Search(int x){
+    Node curr = head;
+    int count = 0;
+    while(curr != null){
+      if(curr.data == x){
+        System.out.println(count);
+        return;
+      }
+    curr = curr.next;
+    
+    count++;
+    }
+     System.out.println("Element not found in the list!");
+  }
+  
+  void reverse(){
+    Node prev = null;
+    Node curr = head;
+    Node next = null;
+    while(curr != null){
+      next = curr.next;
+      curr.next = prev;
+      prev = curr;
+      curr = next;
+    }
+    head = prev;
+  }
   void printList(){
     Node curr = head;
     while(curr != null){
