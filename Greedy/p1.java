@@ -33,3 +33,36 @@ public class p1
 	}
 	
 }
+
+class Solution {
+    // Function to find the maximum number of meetings that can
+    // be performed in a meeting room.
+    class Activity{
+        int start, end;
+    
+        Activity(int start, int end){
+            this.start = start;
+            this.end = end;
+        }
+    }
+    public int maxMeetings(int start[], int end[]) {
+        int n = start.length;
+        List<Activity> activities = new ArrayList<>();
+        
+       for(int i=0; i<n; i++){
+           activities.add(new Activity(start[i], end[i]));
+       }
+       activities.sort((a,b) -> a.end - b.end);
+       int count = 1;
+       int lastend = activities.get(0).end;
+       for(int i=1; i<n; i++){
+           if(activities.get(i).start > lastend){
+               count++;
+           
+               lastend = activities.get(i).end;
+           }
+       }
+       
+       return count;
+    }
+}
